@@ -4,15 +4,13 @@
 function clearPlayers() {
   document.querySelectorAll('.player').forEach(item => {
     item.classList.remove('selected');
-    console.log('Players Cleared');
   })
 }
 
 // Clear points selection
 function clearPoints() {
   document.querySelectorAll('.point').forEach(item => {
-    item.classList.remove('selected');
-    console.log('points Cleared');
+    item.classList.remove('flash');
   })
 }
   
@@ -27,15 +25,14 @@ document.querySelectorAll('.player').forEach(item => {
     // Get player uid
     uid = this.querySelector('.uid');
     let uidNumber = uid.textContent;
-    console.log(uidNumber);
   })
 })
 
 // Selecting points
 document.querySelectorAll('.point').forEach(item => {
   item.addEventListener('click', function () {
-    clearPoints();
-    this.classList.add('selected');
+    this.classList.add('flash');
+    setTimeout(clearPoints, 2000);
     const pointsID = item.getAttribute('id'); 
     // 1 point clicked
     if(pointsID === 'point-1') {
@@ -43,8 +40,20 @@ document.querySelectorAll('.point').forEach(item => {
       let currentPoints = Number(pointsSelector);
       currentPoints = currentPoints + 1;
       document.querySelector(`#player-${uid.textContent}-points`).textContent = currentPoints;
-      console.log('Point 1 clicked and player', uid.textContent, 'selected');
-      console.log(`Current points are ${currentPoints}`);
+    }
+    // 2 points clicked
+    else if(pointsID === 'point-2') {
+      let pointsSelector = document.querySelector(`#player-${uid.textContent}-points`).textContent;
+      let currentPoints = Number(pointsSelector);
+      currentPoints = currentPoints + 2;
+      document.querySelector(`#player-${uid.textContent}-points`).textContent = currentPoints;
+    }
+    // 3 points clicked
+    else if(pointsID === 'point-3') {
+      let pointsSelector = document.querySelector(`#player-${uid.textContent}-points`).textContent;
+      let currentPoints = Number(pointsSelector);
+      currentPoints = currentPoints + 3;
+      document.querySelector(`#player-${uid.textContent}-points`).textContent = currentPoints;
     }
   })
 })
