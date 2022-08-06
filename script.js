@@ -1,5 +1,12 @@
 'use strict';
 
+// Clear quarter selection
+function clearQuarters() {
+  document.querySelectorAll('.quarter').forEach(item => {
+    item.classList.remove('selected');
+  })
+}
+
 // Clear player selection
 function clearPlayers() {
   document.querySelectorAll('.player').forEach(item => {
@@ -14,6 +21,15 @@ function clearPoints() {
   })
 }
   
+
+// Quarter selection
+document.querySelectorAll('.quarter').forEach(item => {
+  item.addEventListener('click', function () {
+    clearQuarters();
+    this.classList.add('selected');
+  })
+})
+
 // Player selection
 let uid = 0;
 document.querySelectorAll('.player').forEach(item => {
