@@ -36,7 +36,7 @@ document.querySelectorAll('.point').forEach(item => {
   item.addEventListener('click', function () {
     clearPoints();
     this.classList.add('selected');
-    const pointsID = item.getAttribute('id');
+    const pointsID = item.getAttribute('id'); 
     // 1 point clicked
     if(pointsID === 'point-1') {
       let pointsSelector = document.querySelector(`#player-${uid.textContent}-points`).textContent;
