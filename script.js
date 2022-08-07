@@ -46,9 +46,11 @@ document.querySelectorAll(".player").forEach((item) => {
 // Points selection
 document.querySelectorAll(".point").forEach((item) => {
   item.addEventListener("click", function () {
+    
     this.classList.add("flash");
     setTimeout(clearPoints, 2000);
     const pointsID = item.getAttribute("id");
+
     // 1 point clicked
     if (pointsID === "point-1") {
       let pointsSelector = document.querySelector(
@@ -60,6 +62,7 @@ document.querySelectorAll(".point").forEach((item) => {
         currentPoints;
       addToTotal(1);
     }
+
     // 2 points clicked
     else if (pointsID === "point-2") {
       let pointsSelector = document.querySelector(
@@ -71,6 +74,7 @@ document.querySelectorAll(".point").forEach((item) => {
         currentPoints;
       addToTotal(2);
     }
+
     // 3 points clicked
     else if (pointsID === "point-3") {
       let pointsSelector = document.querySelector(
@@ -81,6 +85,15 @@ document.querySelectorAll(".point").forEach((item) => {
       document.querySelector(`#player-${uid.textContent}-points`).textContent =
         currentPoints;
       addToTotal(3);
+
+      // Save points to the database
+      console.log('3pt button clicked');
+      let currentTime = new Date().getTime();
+      firebase.database().ref('game-id/team-id/'+currentTime).set({
+        'player-id': 'Player unique ID',
+        'points': 'How many points scored',
+        'quarter': 'Current quarter'
+      });
     }
   });
 });
