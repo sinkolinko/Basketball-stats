@@ -92,3 +92,12 @@ function addToTotal(howManyScored) {
   totalAdded = totalAdded + howManyScored;
   document.querySelector("#total-points").textContent = totalAdded;
 }
+
+// Firebase Testing
+var dbRef = firebase.database().ref('Test 01').child('Banana');
+
+// Using 3 Point button for testing purpose
+document.querySelector('#point-3').addEventListener('click', () => {
+  console.log('button clicked');
+  dbRef.push('This is a test 01');
+});

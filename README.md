@@ -4,7 +4,6 @@ A simple web app we are building as we go through a Javascript course.
 
 TODO:
 
-- Make quarters selectable
 - Store data locally
   - EMCA Script time
   - Team ID
