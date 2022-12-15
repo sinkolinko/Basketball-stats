@@ -88,11 +88,23 @@ h3 {
 }
 
 .player div:nth-child(2) {
-    width: 180px;
+    width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .player div:nth-child(3) {
-    width: 70px;
+    width: 50px;
+    text-align: center;
+}
+
+.player div:nth-child(4),
+.player div:nth-child(5),
+.player div:nth-child(6),
+.player div:nth-child(7) {
+    width: 30px;
+    border: 3px solid pink;
     text-align: center;
 }
 
@@ -131,10 +143,15 @@ h3 {
 }
 
 .header div:nth-child(2) {
-    width: 180px;
+    width: 130px;
 }
 
 .header div:nth-child(3) {
-    width: 70px;
+    width: 50px;
+    text-align: center;
+}
+
+.header div:nth-child(4) {
+    width: 170px;
     text-align: center;
 }
