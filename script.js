@@ -26,7 +26,7 @@ document.querySelectorAll(".quarter").forEach((item) => {
 document.querySelectorAll(".point").forEach((item) => {
   item.addEventListener("click", function () {
     this.classList.add("selected");
-    setTimeout(clearPoints, 500);
+    setTimeout(clearPoints, 1000);
     const pointsID = item.getAttribute("data-action");
 
     // 1 point clicked
