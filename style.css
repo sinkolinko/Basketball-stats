@@ -54,6 +54,10 @@ h3 {
   cursor: pointer;
 }
 
+.alert {
+  color: red;
+}
+
 /* QUARTERS */
 
 .wrap-quarters {
