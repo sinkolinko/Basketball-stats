@@ -57,6 +57,14 @@ document.querySelectorAll(".point").forEach((item) => {
       currentPoints = currentPoints + 3;
       currentPointsElement.textContent = currentPoints;
       addToTotal(3);
+    }
+
+    // Fouls clicked
+    else if (pointsID === "foul") {
+      let currentFoulsElement = item.parentNode.querySelector(".player-fouls");
+      let currentFouls = Number(currentFoulsElement.textContent);
+      currentFouls = currentFouls + 1;
+      currentFoulsElement.textContent = currentFouls;
 
       // Save points to the database
       // console.log("3pt button clicked");
