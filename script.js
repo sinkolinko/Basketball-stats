@@ -80,9 +80,15 @@ document.querySelectorAll(".point").forEach((item) => {
           currentFoulsElement.textContent = currentFouls;
           console.log(currentFouls);
         }
+      } else if (pointsID === "rebound") {
+        let currentReboundsElement =
+          item.parentNode.querySelector(".player-rebounds");
+        let currentRebounds = Number(currentReboundsElement.textContent);
+        currentRebounds = currentRebounds + 1;
+        currentReboundsElement.textContent = currentRebounds;
+        console.log(currentRebounds);
       }
     }
-
     // Save points to the database
     // console.log("3pt button clicked");
     // let currentTime = new Date().getTime();
