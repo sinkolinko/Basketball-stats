@@ -14,6 +14,15 @@ function clearPoints() {
   });
 }
 
+// Substitute selection
+document.getElementById("sub").addEventListener("click", function () {
+  //Find all the players
+  //add class substitute to each player
+  document.querySelectorAll(".player").forEach((item) => {
+    item.classList.add("substitute");
+  });
+});
+
 // Quarter selection
 document.querySelectorAll(".quarter").forEach((item) => {
   item.addEventListener("click", function () {

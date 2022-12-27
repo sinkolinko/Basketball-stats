@@ -180,3 +180,16 @@ h3 {
   margin-left: auto;
   text-align: center;
 }
+
+.bench {
+  display: none;
+}
+
+.playing {
+  display: flex;
+}
+
+.substitute {
+  display: flex;
+  background-color: rgb(255, 0, 0);
+}
