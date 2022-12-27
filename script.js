@@ -16,13 +16,30 @@ function clearPoints() {
 
 // Substitute selection
 document.getElementById("sub").addEventListener("click", function () {
-  //Find all the players
-  //add class substitute to each player
-  document.querySelectorAll(".player").forEach((item) => {
+  document.querySelectorAll(".bench").forEach((item) => {
     item.classList.add("substitute");
+    playerToggle();
   });
 });
 
+function playerToggle() {
+  document.querySelectorAll(".player-name").forEach((item) => {
+    item.addEventListener("click", function () {
+      const playerBox = item.parentNode;
+      playerBox.classList;
+      console.log(playerBox.classList);
+      if (playerBox.classList.contains("playing")) {
+        playerBox.classList.remove("playing");
+        playerBox.classList.add("bench", "substitute");
+        console.log("Player on bench");
+      } else {
+        playerBox.classList.remove("bench", "substitute");
+        playerBox.classList.add("playing");
+        console.log("Player playing");
+      }
+    });
+  });
+}
 // Quarter selection
 document.querySelectorAll(".quarter").forEach((item) => {
   item.addEventListener("click", function () {
