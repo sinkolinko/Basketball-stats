@@ -18,11 +18,11 @@ function clearPoints() {
 document.getElementById("sub").addEventListener("click", function () {
   const substitutionState = this.getAttribute("data-sub");
   if (substitutionState === "sub-disabled") {
-    substitutionsEnabled();
     this.setAttribute("data-sub", "sub-enabled");
+    substitutionsEnabled();
   } else {
-    substitutionsDisabled();
     this.setAttribute("data-sub", "sub-disabled");
+    substitutionsDisabled();
   }
 });
 
@@ -35,24 +35,29 @@ function substitutionsDisabled() {
 function substitutionsEnabled() {
   document.querySelectorAll(".bench").forEach((item) => {
     item.classList.add("substitute");
-    document.querySelectorAll(".player-name").forEach((item) => {
-      item.addEventListener("click", function () {
-        const playerBox = item.parentNode;
-        playerBox.classList;
-        console.log(playerBox.classList);
-        if (playerBox.classList.contains("playing")) {
-          playerBox.classList.remove("playing");
-          playerBox.classList.add("bench", "substitute");
-          console.log("Player on bench");
-        } else {
-          playerBox.classList.remove("bench", "substitute");
-          playerBox.classList.add("playing");
-          console.log("Player playing", this);
-        }
-      });
+  });
+  substitutionToggle();
+}
+
+function substitutionToggle() {
+  document.querySelectorAll(".player-name").forEach((item) => {
+    item.addEventListener("click", function () {
+      const playerBox = item.parentNode;
+      // playerBox.classList;
+      // console.log(playerBox.classList);
+      if (playerBox.classList.contains("playing")) {
+        playerBox.classList.remove("playing");
+        playerBox.classList.add("bench", "substitute");
+        console.log("Player on bench", this);
+      } else {
+        playerBox.classList.remove("bench", "substitute");
+        playerBox.classList.add("playing");
+        console.log("Player playing", this);
+      }
     });
   });
 }
+
 // Quarter selection
 document.querySelectorAll(".quarter").forEach((item) => {
   item.addEventListener("click", function () {
