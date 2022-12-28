@@ -19,9 +19,11 @@ document.getElementById("sub").addEventListener("click", function () {
   const substitutionState = this.getAttribute("data-sub");
   if (substitutionState === "sub-disabled") {
     this.setAttribute("data-sub", "sub-enabled");
+    this.innerHTML = "SUB ENABLED";
     substitutionsEnabled();
   } else {
     this.setAttribute("data-sub", "sub-disabled");
+    this.innerHTML = "SUB DISABLED";
     substitutionsDisabled();
   }
 });
@@ -36,15 +38,16 @@ function substitutionsEnabled() {
   document.querySelectorAll(".bench").forEach((item) => {
     item.classList.add("substitute");
   });
-  substitutionToggle();
 }
 
-function substitutionToggle() {
-  document.querySelectorAll(".player-name").forEach((item) => {
-    item.addEventListener("click", function () {
-      const playerBox = item.parentNode;
-      // playerBox.classList;
-      // console.log(playerBox.classList);
+// the event listener should be on from the start, not called through fuction, just like all other buttons.
+
+document.querySelectorAll(".player-name").forEach((item) => {
+  item.addEventListener("click", function () {
+    const playerBox = item.parentNode;
+    if (
+      document.getElementById("sub").getAttribute("data-sub") === "sub-enabled"
+    ) {
       if (playerBox.classList.contains("playing")) {
         playerBox.classList.remove("playing");
         playerBox.classList.add("bench", "substitute");
@@ -54,9 +57,10 @@ function substitutionToggle() {
         playerBox.classList.add("playing");
         console.log("Player playing", this);
       }
-    });
+    } else {
+    }
   });
-}
+});
 
 // Quarter selection
 document.querySelectorAll(".quarter").forEach((item) => {
