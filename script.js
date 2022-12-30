@@ -22,9 +22,13 @@ document.getElementById("sub").addEventListener("click", function () {
     this.innerHTML = "SUB ENABLED";
     substitutionsEnabled();
   } else {
-    this.setAttribute("data-sub", "sub-disabled");
-    this.innerHTML = "SUB DISABLED";
-    substitutionsDisabled();
+    if (document.querySelectorAll(".playing").length === 5) {
+      this.setAttribute("data-sub", "sub-disabled");
+      this.innerHTML = "SUB DISABLED";
+      substitutionsDisabled();
+    } else {
+      alert("5 players are required on court");
+    }
   }
 });
 
@@ -41,6 +45,10 @@ function substitutionsEnabled() {
 }
 
 // the event listener should be on from the start, not called through fuction, just like all other buttons.
+
+//When substitutionDisabled is called check if there are 5 players with playing class
+//If not the the the substitution list wont close
+//If there are 5 players the substitution list closes
 
 document.querySelectorAll(".player-name").forEach((item) => {
   item.addEventListener("click", function () {
