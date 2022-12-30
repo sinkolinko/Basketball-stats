@@ -89,33 +89,43 @@ h3 {
   align-items: center;
 }
 
-.player div:nth-child(1) {
-  width: 25px;
+.player .player-info {
+  width: 150px;
 }
 
-.player div:nth-child(2) {
-  width: 150px;
+.player .player-number {
+  width: 25px;
+  display: inline-flex;
+}
+
+.player .player-name {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: inline-flex;
+  width: 110px;
+  background: red;
 }
 
-.player div:nth-child(3),
-.player div:nth-child(4),
-.player div:nth-child(5) {
+.player .player-stats {
   width: 40px;
   text-align: center;
   font-size: 20px;
-  font-weight: bold;
+  /* font-weight: bold; */
+  /* display: inline; */
+  display: inline-flex;
+  flex-direction: column;
 }
 
-.player div:nth-child(4) {
+.player .player-stats-label {
+  font-size: 12px;
+}
+
+/* .player div:nth-child(4) {
   margin-left: auto;
-}
+} */
 
-.player div:nth-child(6),
-.player div:nth-child(7),
-.player div:nth-child(8) {
+.player .point {
   width: 50px;
   height: 50px;
   border-radius: 100%;
@@ -128,10 +138,10 @@ h3 {
 
 /* POINTS */
 
-.wrap-points {
+/* .wrap-points {
   display: flex;
   column-gap: 10px;
-}
+} */
 
 .point {
   display: block;
@@ -156,20 +166,20 @@ h3 {
   font-size: 11px;
 }
 
-.header div:nth-child(1) {
+.header .player-number {
   width: 25px;
 }
 
-.header div:nth-child(2) {
+.header .player-name {
   width: 115px;
 }
 
-.header div:nth-child(3) {
+/* .header .player-stats {
   width: 40px;
   text-align: center;
-}
+} */
 
-.header div:nth-child(4) {
+/* .header .point.p-foul {
   width: 40px;
 
   text-align: center;
@@ -179,7 +189,7 @@ h3 {
   width: 200px;
   margin-left: auto;
   text-align: center;
-}
+} */
 
 .bench {
   display: none;
